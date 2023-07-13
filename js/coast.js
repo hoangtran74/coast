@@ -191,6 +191,9 @@ function testDownload (ev) {
 		if(ev.target.dataset.file == "10Mb.bin"){
 			selectedSize = 10;
 		}
+		if(ev.target.dataset.file == "25Mb.bin"){
+			selectedSize = 25;
+		}
 		if(ev.target.dataset.file == "100Mb.bin"){
 			selectedSize = 100;
 		}
@@ -220,7 +223,7 @@ const handleDownloadChart = (val) => {
 
 	switch(selectedSize) {
 
-		case 10:
+		case 25:
 			if(val > 000 )  div.style.width = "1.00px";
 			if(val > 100 )  div.style.width = "6.00px";
 			if(val > 280 )  div.style.width = "7.35px";
