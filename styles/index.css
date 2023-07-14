@@ -66,6 +66,8 @@ textarea { width: 100%; height: 180px; color: lightblue;
 #dl-chart {
 	min-height: 0px;
 	margin-bottom: -25px;
+	display: block;
+	max-width: 125px;
 }
 
 #eta {
