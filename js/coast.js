@@ -321,7 +321,7 @@ const handleGaugeHandler = (val) => {
 */
 async function latencyCheck() {
 	var startDate = new Date();
-    let response = await fetch('/dev/icon.png');
+    let response = await fetch('/coast/icon.png');
     if (response.status === 200) {
 		var endDate   = new Date();
 		var latency = (endDate.getTime() - startDate.getTime()) / 1000;
@@ -346,7 +346,7 @@ function checkUploadSpeed(iterations) {
   check();
 
   function check() {
-      var url = '/dev?cache=' + Math.floor(Math.random() * 10000); //prevent url cache
+      var url = '/coast?cache=' + Math.floor(Math.random() * 10000); //prevent url cache
       var data = getRandomString(1); //1 megabit POST size handled by all servers
       var startTime;
       var speed = 0;
