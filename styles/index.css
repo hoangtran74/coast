@@ -1,0 +1,299 @@
+body {
+    font-size: 14px;
+	background-color:#000;
+	padding: 0;
+	margin: 0;
+    letter-spacing: 0;
+    text-align: left;
+	color: #6caedd;
+}
+
+button {
+	padding: 0.8rem;
+	border: 0;
+	outline: none;
+	background-color: #aaa;
+	font-weight: bold;
+}
+
+button.choice {
+	background-color: #ffc800;
+}
+
+progress {
+	width: 80%;
+	height: 7px;
+	-webkit-appearance: none;
+	visibility: hidden;
+	margin-bottom: -10px;
+}
+
+progress::-webkit-progress-bar {
+	background-color: #b4ffe0;
+}
+
+progress::-webkit-progress-value {
+	background-color:#00ff9a;
+}
+
+textarea { width: 100%; height: 180px; color: lightblue;
+	background-color: #333; border: 0px; margin: 0px;
+}
+
+#wrap {
+	position: absolute;
+	width: 100%;
+	height: 340px;
+	top: 10%;
+	background-color: #333;
+	text-align: center;
+	margin: 0px;
+	margin-top: 50px;
+}
+
+
+#btnx {
+	position: absolute;
+	border-radius: 100%;
+	left: 50%;
+	top: 100px;
+	display: none;
+	margin-left: -35px;
+	margin-top: -15px;
+	background-color: #ffc800;
+}
+
+#dl-chart {
+	min-height: 0px;
+	margin-bottom: -25px;
+}
+
+#eta {
+	font-variant-numeric: tabular-nums;
+}
+
+.box-latency-upload {
+	position: absolute;
+	top: -60px;
+	left: 200px;
+	font-size: 1.3em;
+	background-color: #666;
+	width: 80px;
+	height: 80px;
+	border-radius: .2em;
+	padding: 10px;
+	display: none;
+	border-radius: 100%;
+	font-size: small;
+	border: 2px solid #6caedd;
+}
+
+#download-box {
+	left: 35px;
+}
+
+#latency-box {
+	left: 230px;
+}
+
+#upload-box {
+	left: -150px;
+}
+
+.dl-result-1 {
+	position: absolute;
+	top: -70px;
+	left: 40px;
+	transition: .5s;
+}
+
+.dl-result-2 {
+	position: absolute;
+	top: -120px;
+	left: 40px;
+	transition: .5s;
+}
+
+#result {
+	font-size: 1.5rem;
+	font-variant-numeric: tabular-nums;
+}
+
+#resultDone {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+
+.circ {
+	border-radius: 100%;
+	width: 255px;
+	height: 255px;
+	display: inline-block;
+	background-color: #333;
+	border-top: 15px solid transparent;
+	border-left: 15px solid rgb(32, 191, 240);
+	border-right: 15px solid rgb(32, 191, 240);
+	border-bottom: 15px solid rgb(32, 191, 240);
+	transform: rotate(180deg);
+}
+
+.circ-handle {
+	width: 1px;
+	height: 90px;
+	background: rgb(32, 191, 240);
+	border-left: 7px solid rgb(79, 79, 94);
+	border-top-left-radius: 50%;
+	border-right: 7px solid rgb(79, 79, 94);
+	border-top-right-radius: 50%;
+	border-bottom: 15px solid #ccc;
+	position: relative;
+	left:50%;
+	margin-left: 0px;
+	margin-top: 0px;
+	transform: rotate(0deg);
+	transform-origin: 50% 100%;
+	transition: 3ms;
+	z-index: 1000;
+}
+
+.circ-handle-wrapper {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	left:50%;
+	margin-left: -100px;
+	top:-240px;
+	transform: rotate(-135deg);
+	transform-origin:50% 50%;
+}
+
+.circ-wrapper {
+	margin-top: -50px;
+}
+
+.circ-label {
+	position: absolute;
+	top: 185px;
+	left: 50%;
+	font-size: medium;
+	font-family:'Times New Roman', Times, serif;
+	font-weight: bolder;
+	color: #999;
+}
+
+.circ-l1 {
+	margin-left: -90px;
+	margin-top: -10px;
+}
+
+.circ-l2 {
+	margin-top: -130px;
+	margin-left: -115px;
+
+}
+.circ-l3 {
+	margin-top: -205px;
+	margin-left: -15px;
+
+}
+.circ-l4 {
+	margin-top: -130px;
+	margin-left: 90px;
+}
+
+.circ-l5 {
+	margin-top: -10px;
+	margin-left: 60px;
+}
+
+.result-wrapper {
+	position: absolute;
+	top: 195px;
+	left: 50%;
+	margin-left: -90px;
+}
+
+.result-stats {
+	position: absolute;
+	top: 355px;
+	width: 100%;
+}
+
+.gauge-label {
+	color: #fff;
+}
+.gauge-result {
+	color: #000 ;
+}
+
+.gauge-ft-sm {
+	font-size: .6em ;
+}
+
+.line {
+	width: 100%;
+	height: .1em;
+	border-collapse: collapse;
+	border-style: hidden;
+}
+
+.logout input {
+	float: right;
+	padding-right: 4px;
+	height: 30px;
+	width: 80px;
+	background-color: chocolate;
+	border: 0px;
+	border-radius: .2px;
+	margin-right: 4px;
+	cursor: pointer;
+}
+
+.json-pretty {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.json-selected {
+    background-color: rgba(139, 191, 228, 0.19999999999999996);
+}
+
+.json-string {
+    color: #6caedd;
+}
+
+.json-key {
+    color: #ec5f67;
+}
+
+.json-boolean {
+    color: #99c794;
+}
+
+.json-number {
+    color: #99c794;
+}
+
+.navbar {
+    overflow: hidden;
+}
+
+.navbar a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px 32px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a.active {
+    background-color: #27802a;
+    color: white;
+}
+
+.user-info { float: right; text-align: left; width: 100px; }
+
+.ua { position: absolute; top: 35px; left: 5px; max-width: 200px;}
+
+.host { position: absolute; top: 5px; left: 5px; max-width: 200px;}
