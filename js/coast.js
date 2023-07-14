@@ -321,7 +321,7 @@ const handleGaugeHandler = (val) => {
 */
 async function latencyCheck() {
 	var startDate = new Date();
-    let response = await fetch('/coast/icon.png');
+    let response = await fetch('/coast/images/icons/icon.png');
     if (response.status === 200) {
 		var endDate   = new Date();
 		var latency = (endDate.getTime() - startDate.getTime()) / 1000;
