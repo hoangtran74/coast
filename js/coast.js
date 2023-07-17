@@ -71,7 +71,7 @@ function testDone () {
 		return;
 	}
 
-	checkUploadSpeed(3);
+	//checkUploadSpeed(3);
 
 	document.querySelector ('progress').style.visibility = 'hidden';
 	document.querySelector ('progress').value = 0;
