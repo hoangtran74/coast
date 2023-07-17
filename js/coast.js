@@ -339,7 +339,13 @@ async function latencyCheck() {
 * @return  {void}
 */
 function checkUploadSpeed(iterations) {
-  xhr = new XMLHttpRequest();
+
+  var xhr;
+  if(window.XMLHttpRequest){
+    xhr = new XMLHttpRequest();
+  }else{
+	xhr = new ActiveXObject("Microsoft.XMLHTTP");
+  }
   var average = 0;
   var count = 0;
   var timer = window.setInterval(check, 100); //check every .1 seconds
@@ -367,7 +373,8 @@ function checkUploadSpeed(iterations) {
 		document.getElementById('ul-stats').innerHTML += count + ": " + Math.round(speed/1000) + " Mbps\n";
 
     };
-    xhr.open('POST', url, false);
+
+    xhr.open('POST', url, true);
 	xhr.setRequestHeader('Content-type', 'application/text');
     startTime = new Date();
     xhr.send(data);
