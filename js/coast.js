@@ -115,8 +115,8 @@ function testRunning (ev) {
 		Bps = ev.loaded / ((now - start) / 1000);
 		mbit = Bps / 1024 / 1024 * 8;
 		count++;
-		// skip some initial values (since they are too low)
-		if(count > 2){
+		// skip some initial values (since they are too sporatic)
+		if(count > 10){
 			sum += mbit;
 			bittotal += bit;
 			avg = sum / count;
