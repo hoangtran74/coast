@@ -1,6 +1,7 @@
 // global vars
 let req, xhr, start = 0, count = 0, sum = 0, decimals = 0, blink = false, selectedSize = 0, t;
 let prev_ev_val = 0, bit = 0, bittotal = 0, cancel = false;
+let plotting_max = 200;
 
 // store <button> tags in array
 const btns = Array.from (document.querySelectorAll ('button'));
@@ -128,8 +129,8 @@ function testRunning (ev) {
 
 	document.querySelector ('progress').value = percent;
 	// stop plotting chart after passing over 325 count
-    if(count < 325){
-	handleDownloadChart(avg);
+    	if(count < plotting_max){
+		handleDownloadChart(avg);
 	}
 	handleGaugeHandler(avg);
 
