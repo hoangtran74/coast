@@ -123,18 +123,18 @@ function testRunning (ev) {
 		prev_ev_val = ev.loaded
 		document.getElementById('dl-stats').innerHTML += count + ": " + Math.round(mbit) + "\tMbps (" + bit + " bits) \tTotal: "+bittotal+"\n" ;
 	}
-    document.getElementById('btnx').style.display = "block";
+        document.getElementById('btnx').style.display = "block";
 	document.getElementById('handle').style.visibility = "visible";
 	document.getElementById('download-box').className = "dl-result-1";
 
 	document.querySelector ('progress').value = percent;
 	// stop plotting chart after passing over 325 count
     	if(count < plotting_max){
-		handleDownloadChart(avg);
+		handleDownloadChart(mbit);
 	}
-	handleGaugeHandler(avg);
+	handleGaugeHandler(mbit);
 
-	document.querySelector ('#result').innerHTML = '<font color="#999">⇓</font>&nbsp;' + dec (avg, decimals) + ' Mbps';
+	document.querySelector ('#result').innerHTML = '<font color="#999">⇓</font>&nbsp;' + dec (mbit, decimals) + ' Mbps';
 	document.querySelector ('#eta').innerHTML = dec (eta, decimals) + ' sec';
 }
 
