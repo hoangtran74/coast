@@ -72,7 +72,7 @@ function testDone () {
 		return;
 	}
 
-	//checkUploadSpeed(3);
+	checkUploadSpeed(3);
 
 	document.querySelector ('progress').style.visibility = 'hidden';
 	document.querySelector ('progress').value = 0;
@@ -81,7 +81,7 @@ function testDone () {
 	document.getElementById('btnx').style.display = "none";
 	document.getElementById('handle').style.visibility = "hidden";
 	document.getElementById('download-box').className = "dl-result-2";
-    selectedSize = 0;
+        selectedSize = 0;
 	prev_ev_val = 0;
 	bittotal = 0;
 	bit = 0;
@@ -157,8 +157,8 @@ function testDownload (ev) {
 	req = new XMLHttpRequest;
 
 	document.getElementById('dl-chart').innerHTML = '';
-    document.getElementById("latency-box").style.display = 'none';
-    document.getElementById("upload-box").style.display = 'none';
+        document.getElementById("latency-box").style.display = 'none';
+        document.getElementById("upload-box").style.display = 'none';
 	document.getElementById('handle').style.visibility = "visible";
 	document.getElementById('download-box').className = "dl-result-1";
 	document.getElementById('result').innerHTML = 'Speedtest';
@@ -222,38 +222,38 @@ const handleDownloadChart = (val) => {
 
     var div = document.createElement('div');
     div.style.backgroundColor = "#00ff9a";
-	div.style.borderTop = "1px solid blue";
+    div.style.borderTop = "1px solid blue";
     div.style.display = "inline-block";
 
-	switch(selectedSize) {
+    switch(selectedSize) {
 
-		case 25:
-			if(val > 000 )  div.style.width = "1.00px";
-			if(val > 100 )  div.style.width = "6.00px";
-			if(val > 280 )  div.style.width = "7.35px";
-			if(val > 500 )  div.style.width = "8.50px";
-			if(val > 750 )  div.style.width = "9.00px";
-			if(val > 1000 ) div.style.width = "10.0px";
-			break;
-		case 100:
-			if(val > 000 )  div.style.width = "0.50px";
-			if(val > 100 )  div.style.width = "3.00px";
-			if(val > 280 )  div.style.width = "4.70px";
-			if(val > 500 )  div.style.width = "6.50px";
-			if(val > 750 )  div.style.width = "7.00px";
-			if(val > 1000 ) div.style.width = "9.60px";
-			break;
-		case 1000:
-			if(val > 000 )  div.style.width = "0.05px";
-			if(val > 100 )  div.style.width = "0.30px";
-			if(val > 280 )  div.style.width = "0.45px";
-			if(val > 500 )  div.style.width = "0.50px";
-			if(val > 750 )  div.style.width = "0.60px";
-			if(val > 1000 ) div.style.width = "0.70px";
-			break;
-	}
+	case 25:
+		if(val > 000 )  div.style.width = "1.00px";
+		if(val > 100 )  div.style.width = "6.00px";
+		if(val > 280 )  div.style.width = "7.35px";
+		if(val > 500 )  div.style.width = "8.50px";
+		if(val > 750 )  div.style.width = "9.00px";
+		if(val > 1000 ) div.style.width = "10.0px";
+		break;
+	case 100:
+		if(val > 000 )  div.style.width = "0.50px";
+		if(val > 100 )  div.style.width = "3.00px";
+		if(val > 280 )  div.style.width = "4.70px";
+		if(val > 500 )  div.style.width = "6.50px";
+		if(val > 750 )  div.style.width = "7.00px";
+		if(val > 1000 ) div.style.width = "9.60px";
+		break;
+	case 1000:
+		if(val > 000 )  div.style.width = "0.05px";
+		if(val > 100 )  div.style.width = "0.30px";
+		if(val > 280 )  div.style.width = "0.45px";
+		if(val > 500 )  div.style.width = "0.50px";
+		if(val > 750 )  div.style.width = "0.60px";
+		if(val > 1000 ) div.style.width = "0.70px";
+		break;
+    }
 
-	var adjustHeight = 3; /* for low bandwidth speed network */
+    var adjustHeight = 3; /* for low bandwidth speed network */
     div.style.height = (Math.log(val)*Math.log(val) + (val<25? adjustHeight:0)).toString() + "px";
     document.getElementById('dl-chart').appendChild(div);
 }
@@ -306,7 +306,7 @@ const handleGaugeHandler = (val) => {
 		document.getElementById("l4").innerHTML = "75";
 		document.getElementById("l5").innerHTML = "100Mb";
 	} else {
-        max = 1000;
+            	max = 1000;
 		document.getElementById("l2").innerHTML = "250";
 		document.getElementById("l3").innerHTML = "500";
 		document.getElementById("l4").innerHTML = "750";
@@ -374,12 +374,12 @@ function checkUploadSpeed(iterations) {
           window.clearInterval(timer);
           document.getElementById("upload-box").style.display = 'block';
         };
-		document.getElementById('ul-stats').innerHTML += count + ": " + Math.round(speed/1000) + " Mbps\n";
+	document.getElementById('ul-stats').innerHTML += count + ": " + Math.round(speed/1000) + " Mbps\n";
 
     };
 
     xhr.open('POST', url, true);
-	xhr.setRequestHeader('Content-type', 'application/text');
+    xhr.setRequestHeader('Content-type', 'application/text');
     startTime = new Date();
     xhr.send(data);
   };
