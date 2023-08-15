@@ -120,7 +120,7 @@ function testRunning (ev) {
 			sum += mbit;
 			bittotal += bit;
 			avg = sum / count;
-		}	
+		}
 		percent = ev.loaded / ev.total * 100.0;
 		eta = (ev.total - ev.loaded) / Bps;
 		prev_ev_val = ev.loaded
@@ -356,7 +356,7 @@ function checkUploadSpeed(iterations) {
   check();
 
   function check() {
-      var url = '/coast/?cache=' + Math.floor(Math.random() * 10000); //prevent url cache
+      var url = '/coast?cache=' + Math.floor(Math.random() * 10000); //prevent url cache
       var data = getRandomString(1); //1 megabit POST size handled by all servers
       var startTime;
       var speed = 0;
