@@ -114,13 +114,10 @@ function testRunning (ev) {
 		bit = ev.loaded - prev_ev_val;
 		Bps = ev.loaded / ((now - start) / 1000);
 		mbit = Bps / 1024 / 1024 * 8;
-		count++;
-		// skip some initial values (since they are too sporatic)
-		if(count > 10){
-			sum += mbit;
-			bittotal += bit;
-			avg = sum / count;
-		}
+		count++;		
+		sum += mbit;
+		bittotal += bit;
+		avg = sum / count
 		percent = ev.loaded / ev.total * 100.0;
 		eta = (ev.total - ev.loaded) / Bps;
 		prev_ev_val = ev.loaded
@@ -132,7 +129,7 @@ function testRunning (ev) {
 
 	document.querySelector ('progress').value = percent;
 	// stop plotting chart after passing over 325 count
-    	if(count < plotting_max){
+    	if(count < plotting_max && count > 10){
 		handleDownloadChart(avg);
 	}
 	handleGaugeHandler(avg);
