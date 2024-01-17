@@ -110,19 +110,17 @@ function testRunning (ev) {
 	let eta = 0;
 
 	if (ev.lengthComputable && ev.total > 0) {
-
 		bit = ev.loaded - prev_ev_val;
 		Bps = ev.loaded / ((now - start) / 1000);
-		//mbit = Bps / 1024 / 1024 * 8;
+		mbit = Bps / 1024 / 1024 * 8;
 		count++;
-		sum += bit;
+		sum += mbit;
 		bittotal += bit;
 		avg = sum / count;
 		percent = ev.loaded / ev.total * 100.0;
 		eta = (ev.total - ev.loaded) / Bps;
 		prev_ev_val = ev.loaded;
-		console.log("bit: " + bit + "  Bps: " + Bps);
-		document.getElementById('dl-stats').innerHTML += count + ": " + Math.round(bit) + "\tMbps (" + bit + " bits) \tTotal Download: "+bittotal+" (" + Math.round(bittotal/8)+ "MB)\n" ;
+		document.getElementById('dl-stats').innerHTML += count + ": " + Math.round(Bps) + "\tMbps (" + bit + " bits) \tTotal Download: "+bittotal+" (" + Math.round(bittotal/8)+ "MB)\n" ;
 	}
     document.getElementById('btnx').style.display = "block";
 	document.getElementById('handle').style.visibility = "visible";
