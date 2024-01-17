@@ -355,6 +355,7 @@ function checkUploadSpeed(iterations) {
   function check() {
       var url = '/coast?cache=' + Math.floor(Math.random() * 10000); //prevent url cache
       var data = getRandomString(1); //1 megabit POST size handled by all servers
+      console.log("byteSize for upload:" + byteSize(data) + "\n");	  
       var startTime;
       var speed = 0;
 
