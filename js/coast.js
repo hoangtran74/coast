@@ -72,7 +72,7 @@ function testDone () {
 		return;
 	}
 
-	//checkUploadSpeed(3);
+	checkUploadSpeed(3);
 
 	document.querySelector ('progress').style.visibility = 'hidden';
 	document.querySelector ('progress').value = 0;
@@ -360,6 +360,7 @@ function checkUploadSpeed(iterations) {
       var data = getRandomString(1); //1 megabit POST size handled by all servers
       var startTime;
       var speed = 0;
+      console.log(Buffer.from(data).length);
 
     xhr.onload = function() {
 
