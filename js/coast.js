@@ -120,7 +120,8 @@ function testRunning (ev) {
 		avg = sum / count;
 		percent = ev.loaded / ev.total * 100.0;
 		eta = (ev.total - ev.loaded) / Bps;
-		prev_ev_val = ev.loaded
+		prev_ev_val = ev.loaded;
+		console.log("bit: " + bit + "  Bps: " + Bps);
 		document.getElementById('dl-stats').innerHTML += count + ": " + Math.round(bit) + "\tMbps (" + bit + " bits) \tTotal Download: "+bittotal+" (" + Math.round(bittotal/8)+ "MB)\n" ;
 	}
     document.getElementById('btnx').style.display = "block";
