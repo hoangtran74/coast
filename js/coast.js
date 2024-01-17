@@ -116,7 +116,7 @@ function testRunning (ev) {
 		count++;
 		sum += mbit;
 		bittotal += bit;
-		avg = sum / count;
+		avg = sum / count /8;
 		percent = ev.loaded / ev.total * 100.0;
 		eta = (ev.total - ev.loaded) / Bps;
 		prev_ev_val = ev.loaded;
