@@ -186,8 +186,8 @@ function testDownload (ev) {
 		// load file avoiding the cache
 		req.open ('GET', ev.target.dataset.file + '?' + start, true);
 
-		if(ev.target.dataset.file == "1Mb.bin"){
-			selectedSize = 1;
+		if(ev.target.dataset.file == "5Mb.bin"){
+			selectedSize = 5;
 		}
 		if(ev.target.dataset.file == "10Mb.bin"){
 			selectedSize = 10;
