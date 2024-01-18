@@ -120,7 +120,7 @@ function testRunning (ev) {
 		percent = ev.loaded / ev.total * 100.0;
 		eta = (ev.total - ev.loaded) / Bps;
 		prev_ev_val = ev.loaded;
-		document.getElementById('dl-stats').innerHTML += count + ": "+ Bps + "Bps\t"+Processing: " + Math.round(bit/1024) + " Kb \tTotal Download: "+bittotal+" (" + Math.floor(bittotal/1024/1024)+ "Mb)\n";
+		document.getElementById('dl-stats').innerHTML += count + ": Processing: " + Math.round(bit) + " bits \tTotal Download: "+bittotal+" (" + Math.floor(bittotal/1024/1024)+ "Mb)\n";
 	}
         document.getElementById('btnx').style.display = "block";
 	document.getElementById('handle').style.visibility = "visible";
