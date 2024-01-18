@@ -72,7 +72,7 @@ function testDone () {
 		return;
 	}
 
-	//checkUploadSpeed(3);
+	checkUploadSpeed(3);
 
 	document.querySelector ('progress').style.visibility = 'hidden';
 	document.querySelector ('progress').value = 0;
@@ -81,7 +81,7 @@ function testDone () {
 	document.getElementById('btnx').style.display = "none";
 	document.getElementById('handle').style.visibility = "hidden";
 	document.getElementById('download-box').className = "dl-result-2";
-    selectedSize = 0;
+        selectedSize = 0;
 	prev_ev_val = 0;
 	bittotal = 0;
 	bit = 0;
@@ -122,14 +122,14 @@ function testRunning (ev) {
 		prev_ev_val = ev.loaded;
 		document.getElementById('dl-stats').innerHTML += count + ": "+ Bps + "Bps\t"+Processing: " + Math.round(bit/1024) + " Kb \tTotal Download: "+bittotal+" (" + Math.floor(bittotal/1024/1024)+ "Mb)\n";
 	}
-    document.getElementById('btnx').style.display = "block";
+        document.getElementById('btnx').style.display = "block";
 	document.getElementById('handle').style.visibility = "visible";
 	document.getElementById('download-box').className = "dl-result-1";
 
 	document.querySelector ('progress').value = percent;
 
 	// stop plotting chart after passing over 325 count
-    if(count < plotting_max){
+        if(count < plotting_max){
 		handleDownloadChart(avg);
 	}
 
@@ -156,8 +156,8 @@ function testDownload (ev) {
 	req = new XMLHttpRequest;
 
 	document.getElementById('dl-chart').innerHTML = '';
-    document.getElementById("latency-box").style.display = 'none';
-    document.getElementById("upload-box").style.display = 'none';
+        document.getElementById("latency-box").style.display = 'none';
+        document.getElementById("upload-box").style.display = 'none';
 	document.getElementById('handle').style.visibility = "visible";
 	document.getElementById('download-box').className = "dl-result-1";
 	document.getElementById('result').innerHTML = 'Speedtest';
@@ -221,7 +221,7 @@ const handleDownloadChart = (val) => {
 
     var div = document.createElement('div');
     div.style.backgroundColor = "#00ff9a";
-	div.style.borderTop = "1px solid blue";
+    div.style.borderTop = "1px solid blue";
     div.style.display = "inline-block";
 
 	switch(selectedSize) {
