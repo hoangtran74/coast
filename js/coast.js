@@ -365,8 +365,8 @@ function checkUploadSpeed(iterations) {
       speed = Math.round(1024 / ((new Date() - startTime) / 1000));
       average == 0 ? average = speed : average = Math.round((average + speed) / 2);
 
-      document.getElementById('speed').textContent = 'speed: ' + speed/1000 + 'Mbps';
-      document.getElementById('average').textContent = Math.round(average/1000).toString() + ' Mbps';
+      //document.getElementById('speed').textContent = 'speed: ' + speed/1024 + 'Mbps';
+      document.getElementById('average').textContent = Math.round(average/1024).toString() + ' Mbps';
 
         count++;
         if (count == iterations && !cancel) {
