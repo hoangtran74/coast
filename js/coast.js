@@ -355,7 +355,7 @@ function checkUploadSpeed(iterations) {
   check();
 
   function check() {
-      var url = '/coast-express/?cache=' + Math.floor(Math.random() * 10000); //prevent url cache
+      var url = '/coast-express?cache=' + Math.floor(Math.random() * 10000); //prevent url cache
       var data = getRandomString(1); //1 megabit POST size handled by all servers
       var startTime;
       var speed = 0;
