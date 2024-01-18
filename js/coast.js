@@ -378,7 +378,7 @@ function checkUploadSpeed(iterations) {
     };
 
     xhr.open('POST', url, true);
-	xhr.setRequestHeader('Content-type', 'application/text');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     startTime = new Date();
     xhr.send(data);
   };
