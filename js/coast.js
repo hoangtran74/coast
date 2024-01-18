@@ -359,15 +359,14 @@ function checkUploadSpeed(iterations) {
       var data = getRandomString(1); //1 megabit POST size handled by all servers
       var startTime;
       var speed = 0;
-      console.log(Buffer.from(data).length);
+      
+      xhr.onload = function() {
 
-    xhr.onload = function() {
+      speed = Math.round(1024 / ((new Date() - startTime) / 1000));
+      average == 0 ? average = speed : average = Math.round((average + speed) / 2);
 
-        speed = Math.round(1024 / ((new Date() - startTime) / 1000));
-        average == 0 ? average = speed : average = Math.round((average + speed) / 2);
-
-		document.getElementById('speed').textContent = 'speed: ' + speed/1000 + 'Mbps';
-		document.getElementById('average').textContent = Math.round(average/1000).toString() + ' Mbps';
+      document.getElementById('speed').textContent = 'speed: ' + speed/1000 + 'Mbps';
+      document.getElementById('average').textContent = Math.round(average/1000).toString() + ' Mbps';
 
         count++;
         if (count == iterations && !cancel) {
