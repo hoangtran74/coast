@@ -120,7 +120,7 @@ function testRunning (ev) {
 		percent = ev.loaded / ev.total * 100.0;
 		eta = (ev.total - ev.loaded) / Bps;
 		prev_ev_val = ev.loaded;
-		document.getElementById('dl-stats').innerHTML += count + ": Processing " + Math.round(bit) + " bits \t at " + dec(Bps/1024/1024,2) + "Mbps\t Total Download: "+ bittotal + " (" + Math.floor(bittotal/1024/1024)+ "Mb)\n";
+		document.getElementById('dl-stats').innerHTML += count + ": Processing " + Math.round(bit) + " bits \t at " + dec(Bps/1024/1024,2) + " Mbps\t Total Download: "+ bittotal + " (" + Math.floor(bittotal/1024/1024)+ "Mb)\n";
 	}
         document.getElementById('btnx').style.display = "block";
 	document.getElementById('handle').style.visibility = "visible";
@@ -130,10 +130,10 @@ function testRunning (ev) {
 
 	// stop plotting chart after passing over 325 count
         if(count < plotting_max){
-		handleDownloadChart(avg);
+		handleDownloadChart(dec(Bps/1024/1024,2));
 	}
 
-	handleGaugeHandler(avg);
+	handleGaugeHandler(dec(Bps/1024/1024,2));
 
 
 	document.querySelector ('#result').innerHTML = '<font color="#999">⇓</font>&nbsp;' + dec (avg, decimals) + ' Mbps';
