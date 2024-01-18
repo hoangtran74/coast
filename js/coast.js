@@ -120,7 +120,7 @@ function testRunning (ev) {
 		percent = ev.loaded / ev.total * 100.0;
 		eta = (ev.total - ev.loaded) / Bps;
 		prev_ev_val = ev.loaded;
-		document.getElementById('dl-stats').innerHTML += count + ": Processing " + Math.round(bit) + " bits \t at " + dec(Bps/1024/1024,2) + " Mbps\t Total Download: "+ bittotal + " (" + Math.floor(bittotal/1024/1024)+ "Mb)\n";
+		document.getElementById('dl-stats').innerHTML += count + ": Processing " + Math.round(bit) + " bytes at " + dec(Bps/1024/1024,2) + " MBps\t Total Download: "+ bittotal + " (" + dec(bittotal/1024/1024,2)+ "MB)\n";
 	}
         document.getElementById('btnx').style.display = "block";
 	document.getElementById('handle').style.visibility = "visible";
@@ -136,7 +136,7 @@ function testRunning (ev) {
 	handleGaugeHandler(dec(Bps/1024/1024,2));
 
 
-	document.querySelector ('#result').innerHTML = '<font color="#999">⇓</font>&nbsp;' + dec(Bps/1024/1024,2) + ' Mbps';
+	document.querySelector ('#result').innerHTML = '<font color="#999">⇓</font>&nbsp;' + dec(Bps/1024/1024,2) + ' MBps';
 	document.querySelector ('#eta').innerHTML = dec (eta, decimals) + ' sec';
 }
 
@@ -188,8 +188,8 @@ function testDownload (ev) {
 		// load file avoiding the cache
 		req.open ('GET', ev.target.dataset.file + '?' + start, true);
 
-		if(ev.target.dataset.file == "1Mb.bin"){
-			selectedSize = 1;
+		if(ev.target.dataset.file == "5Mb.bin"){
+			selectedSize = 5;
 		}
 		if(ev.target.dataset.file == "10Mb.bin"){
 			selectedSize = 10;
@@ -289,27 +289,27 @@ const handleGaugeHandler = (val) => {
 		document.getElementById("l2").innerHTML = "6";
 		document.getElementById("l3").innerHTML = "13";
 		document.getElementById("l4").innerHTML = "19";
-		document.getElementById("l5").innerHTML = "25Mb";
+		document.getElementById("l5").innerHTML = "25MB";
 	}
 	else if (val < 50) {
 		max = 50;
 		document.getElementById("l2").innerHTML = "12";
 		document.getElementById("l3").innerHTML = "25";
 		document.getElementById("l4").innerHTML = "37";
-		document.getElementById("l5").innerHTML = "50Mb";
+		document.getElementById("l5").innerHTML = "50MB";
 	}
 	else if (val < 100) {
 		max = 100;
 		document.getElementById("l2").innerHTML = "25";
 		document.getElementById("l3").innerHTML = "50";
 		document.getElementById("l4").innerHTML = "75";
-		document.getElementById("l5").innerHTML = "100Mb";
+		document.getElementById("l5").innerHTML = "100MB";
 	} else {
         max = 1000;
 		document.getElementById("l2").innerHTML = "250";
 		document.getElementById("l3").innerHTML = "500";
 		document.getElementById("l4").innerHTML = "750";
-		document.getElementById("l5").innerHTML = "1Gb";
+		document.getElementById("l5").innerHTML = "1GB";
 	}
 
 	document.getElementById("handle").style.transform = "rotate(" + ( arc * val / max) + "deg)";
@@ -365,15 +365,15 @@ function checkUploadSpeed(iterations) {
       speed = Math.round(1024 / ((new Date() - startTime) / 1000));
       average == 0 ? average = speed : average = Math.round((average + speed) / 2);
 
-      //document.getElementById('speed').textContent = 'speed: ' + speed/1024 + 'Mbps';
-      document.getElementById('average').textContent = Math.round(average/1024).toString() + ' Mbps';
+      //document.getElementById('speed').textContent = 'speed: ' + speed/1024 + 'MBps';
+      document.getElementById('average').textContent = Math.round(average/1024).toString() + ' MBps';
 
         count++;
         if (count == iterations && !cancel) {
           window.clearInterval(timer);
           document.getElementById("upload-box").style.display = 'block';
         };
-		document.getElementById('ul-stats').innerHTML += count + ": " + Math.round(speed/1000) + " Mbps\n";
+		document.getElementById('ul-stats').innerHTML += count + ": " + Math.round(speed/1000) + " MBps\n";
 
     };
 
