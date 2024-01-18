@@ -136,7 +136,7 @@ function testRunning (ev) {
 	handleGaugeHandler(dec(Bps/1024/1024,2));
 
 
-	document.querySelector ('#result').innerHTML = '<font color="#999">⇓</font>&nbsp;' + dec (avg, decimals) + ' Mbps';
+	document.querySelector ('#result').innerHTML = '<font color="#999">⇓</font>&nbsp;' + dec(Bps/1024/1024,2) + ' Mbps';
 	document.querySelector ('#eta').innerHTML = dec (eta, decimals) + ' sec';
 }
 
