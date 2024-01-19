@@ -72,7 +72,8 @@ function testDone () {
 		return;
 	}
 
-	checkUploadSpeed(3);
+	latencyCheck();
+	//checkUploadSpeed(3);
 
 	document.querySelector ('progress').style.visibility = 'hidden';
 	document.querySelector ('progress').value = 0;
@@ -168,8 +169,6 @@ function testDownload (ev) {
 	document.getElementById('ul-stats').innerHTML = "";
 
 	if(ev.target.dataset.file != ""){
-
-		latencyCheck();
 
 		start = Date.now ();
 		count = 0;
